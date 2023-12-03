@@ -1,0 +1,56 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+
+analyzer:
+  plugins:
+    - architecture_linter
+
+architecture_linter:
+  excludes:
+    - "**.g.dart"
+
+  lint_severity: warning
+
+  layers:
+    - &infrastructureLayer
+      name: "Infrastructure"
+      path: "(infrastructure)"
+    - &domainLayer
+      name: "Domain"
+      path: "(domain)"
+    - &presentationLayer
+      name: "Presentation"
+      path: "(presentation)"
+    - &useCaseLayer
+      name: "Domain/UseCases"
+      path: "(domain/use_cases)"
+    - &utils
+      name: "Utils"
+      path: "(utils)"
+    - &repository
+      name: "repository"
+      path: "(repository)"
+
+  layers_config:
+    - layer: *repository
+      severity: error
+
+  banned_imports:
+    - layer: *domainLayer
+      banned:
+        - *presentationLayer
+        - *useCaseLayer
+        - *infrastructureLayer
+    - layer: *presentationLayer
+      banned:
+        - *infrastructureLayer
+    - layer: *infrastructureLayer
+      banned:
+        - *useCaseLayer
+        - *presentationLayer
+    - layer: *useCaseLayer
+      banned:
+        - *presentationLayer
+        - *infrastructureLayer
