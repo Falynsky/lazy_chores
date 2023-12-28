@@ -4,6 +4,8 @@ linter:
   rules:
 
 analyzer:
+  errors:
+    invalid_annotation_target: ignore
   plugins:
     - architecture_linter
 
