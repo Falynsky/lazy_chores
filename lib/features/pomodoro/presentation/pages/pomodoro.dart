@@ -1,48 +1,31 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lazy_chores/features/pomodoro/presentation/bloc/pomodoro_cubit/pomodoro_cubit.dart';
+import 'package:lazy_chores/features/pomodoro/presentation/bloc/pomodoro_cubit/pomodoro_state.dart';
 
-class Pomodoro extends HookWidget {
-  static const int _initialValue = 1 * 60; // 25 minutes in seconds
+class Pomodoro extends StatefulWidget {
   const Pomodoro({Key? key}) : super(key: key);
 
   @override
+  State<Pomodoro> createState() => _PomodoroState();
+}
+
+class _PomodoroState extends State<Pomodoro> {
+  static const int _initialValue = 1 * 60;
+  late PomodoroCubit pomodoroCubit;
+  late int seconds;
+  late bool isRunning;
+
+  @override
+  void initState() {
+    super.initState();
+    pomodoroCubit = PomodoroCubit(_initialValue);
+    seconds = _initialValue;
+    isRunning = false;
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final _timer = useState(_initialValue);
-    final _isRunning = useState(false);
-
-    void startTimer() {
-      _isRunning.value = true;
-    }
-
-    void stopTimer() {
-      _isRunning.value = false;
-      _timer.value = _initialValue;
-    }
-
-    useEffect(() {
-      Timer? timer;
-
-      if (_isRunning.value && _timer.value > 0) {
-        timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-          _timer.value = _timer.value - 1;
-          if (_timer.value == 0) {
-            stopTimer();
-          }
-        });
-      }
-
-      return timer?.cancel;
-    }, [_isRunning.value]);
-
-
-    String formatTime(int seconds) {
-      final minutes = (seconds ~/ 60).toString().padLeft(2, '0');
-      final remainingSeconds = (seconds % 60).toString().padLeft(2, '0');
-      return '$minutes:$remainingSeconds';
-    }
-
     return Column(
       children: [
         const Padding(
@@ -52,11 +35,40 @@ class Pomodoro extends HookWidget {
           ),
         ),
         const SizedBox(height: 20),
-        Text(
-          formatTime(_timer.value),
-          style: TextStyle(
-            fontSize: 60,
-            fontWeight: FontWeight.bold,
+        BlocListener<PomodoroCubit, PomodoroState>(
+          bloc: pomodoroCubit,
+          listener: (context, state) {
+            state.maybeWhen(
+              count: (currentSeconds, isRunning) {
+                if (seconds == 0) {
+                  this.isRunning = isRunning;
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Pomodoro finished!'),
+                    ),
+                  );
+                } else {
+                  setState(() {
+                    this.isRunning = isRunning;
+                    seconds = currentSeconds;
+                  });
+                }
+              },
+              stop: (isRunning) {
+                setState(() {
+                  this.isRunning = isRunning;
+                  seconds = _initialValue;
+                });
+              },
+              orElse: () {},
+            );
+          },
+          child: Text(
+            formatTime(seconds),
+            style: const TextStyle(
+              fontSize: 60,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
         const SizedBox(height: 20),
@@ -64,17 +76,42 @@ class Pomodoro extends HookWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: startTimer,
+              onPressed: isRunning
+                  ? null
+                  : () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Pomodoro started!'),
+                        ),
+                      );
+                      pomodoroCubit.startTimer();
+                    },
               child: const Text('Start'),
             ),
             const SizedBox(width: 20),
             ElevatedButton(
-              onPressed: stopTimer,
+              onPressed: !isRunning
+                  ? null
+                  : () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Pomodoro stopped!'),
+                        ),
+                      );
+                      pomodoroCubit.stopTimer();
+                    },
               child: const Text('Stop'),
             ),
           ],
         ),
       ],
     );
+  }
+
+  String formatTime(int seconds) {
+    final minutes = (seconds ~/ 60).toString().padLeft(2, '0');
+    final remainingSeconds = (seconds % 60).toString().padLeft(2, '0');
+
+    return '$minutes:$remainingSeconds';
   }
 }

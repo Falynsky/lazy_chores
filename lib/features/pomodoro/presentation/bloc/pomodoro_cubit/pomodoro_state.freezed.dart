@@ -16,12 +16,49 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$PomodoroState {
-  int get minutes => throw _privateConstructorUsedError;
-  int get seconds => throw _privateConstructorUsedError;
-  bool get isRunning => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $PomodoroStateCopyWith<PomodoroState> get copyWith =>
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int seconds, bool isRunning) count,
+    required TResult Function(bool isRunning) stop,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int seconds, bool isRunning)? count,
+    TResult? Function(bool isRunning)? stop,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int seconds, bool isRunning)? count,
+    TResult Function(bool isRunning)? stop,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Count value) count,
+    required TResult Function(_Stop value) stop,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Count value)? count,
+    TResult? Function(_Stop value)? stop,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Count value)? count,
+    TResult Function(_Stop value)? stop,
+    required TResult orElse(),
+  }) =>
       throw _privateConstructorUsedError;
 }
 
@@ -30,8 +67,6 @@ abstract class $PomodoroStateCopyWith<$Res> {
   factory $PomodoroStateCopyWith(
           PomodoroState value, $Res Function(PomodoroState) then) =
       _$PomodoroStateCopyWithImpl<$Res, PomodoroState>;
-  @useResult
-  $Res call({int minutes, int seconds, bool isRunning});
 }
 
 /// @nodoc
@@ -43,62 +78,140 @@ class _$PomodoroStateCopyWithImpl<$Res, $Val extends PomodoroState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+}
 
-  @pragma('vm:prefer-inline')
+/// @nodoc
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$PomodoroStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$InitialImpl implements _Initial {
+  _$InitialImpl();
+
   @override
-  $Res call({
-    Object? minutes = null,
-    Object? seconds = null,
-    Object? isRunning = null,
+  String toString() {
+    return 'PomodoroState.initial()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int seconds, bool isRunning) count,
+    required TResult Function(bool isRunning) stop,
   }) {
-    return _then(_value.copyWith(
-      minutes: null == minutes
-          ? _value.minutes
-          : minutes // ignore: cast_nullable_to_non_nullable
-              as int,
-      seconds: null == seconds
-          ? _value.seconds
-          : seconds // ignore: cast_nullable_to_non_nullable
-              as int,
-      isRunning: null == isRunning
-          ? _value.isRunning
-          : isRunning // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int seconds, bool isRunning)? count,
+    TResult? Function(bool isRunning)? stop,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int seconds, bool isRunning)? count,
+    TResult Function(bool isRunning)? stop,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Count value) count,
+    required TResult Function(_Stop value) stop,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Count value)? count,
+    TResult? Function(_Stop value)? stop,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Count value)? count,
+    TResult Function(_Stop value)? stop,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
   }
 }
 
-/// @nodoc
-abstract class _$$PomodoroStateImplCopyWith<$Res>
-    implements $PomodoroStateCopyWith<$Res> {
-  factory _$$PomodoroStateImplCopyWith(
-          _$PomodoroStateImpl value, $Res Function(_$PomodoroStateImpl) then) =
-      __$$PomodoroStateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({int minutes, int seconds, bool isRunning});
+abstract class _Initial implements PomodoroState {
+  factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-class __$$PomodoroStateImplCopyWithImpl<$Res>
-    extends _$PomodoroStateCopyWithImpl<$Res, _$PomodoroStateImpl>
-    implements _$$PomodoroStateImplCopyWith<$Res> {
-  __$$PomodoroStateImplCopyWithImpl(
-      _$PomodoroStateImpl _value, $Res Function(_$PomodoroStateImpl) _then)
+abstract class _$$CountImplCopyWith<$Res> {
+  factory _$$CountImplCopyWith(
+          _$CountImpl value, $Res Function(_$CountImpl) then) =
+      __$$CountImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int seconds, bool isRunning});
+}
+
+/// @nodoc
+class __$$CountImplCopyWithImpl<$Res>
+    extends _$PomodoroStateCopyWithImpl<$Res, _$CountImpl>
+    implements _$$CountImplCopyWith<$Res> {
+  __$$CountImplCopyWithImpl(
+      _$CountImpl _value, $Res Function(_$CountImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? minutes = null,
     Object? seconds = null,
     Object? isRunning = null,
   }) {
-    return _then(_$PomodoroStateImpl(
-      minutes: null == minutes
-          ? _value.minutes
-          : minutes // ignore: cast_nullable_to_non_nullable
-              as int,
+    return _then(_$CountImpl(
       seconds: null == seconds
           ? _value.seconds
           : seconds // ignore: cast_nullable_to_non_nullable
@@ -113,59 +226,255 @@ class __$$PomodoroStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PomodoroStateImpl extends _PomodoroState {
-  const _$PomodoroStateImpl(
-      {required this.minutes, required this.seconds, required this.isRunning})
-      : super._();
+class _$CountImpl implements _Count {
+  _$CountImpl({required this.seconds, this.isRunning = true});
 
-  @override
-  final int minutes;
   @override
   final int seconds;
   @override
+  @JsonKey()
   final bool isRunning;
 
   @override
   String toString() {
-    return 'PomodoroState(minutes: $minutes, seconds: $seconds, isRunning: $isRunning)';
+    return 'PomodoroState.count(seconds: $seconds, isRunning: $isRunning)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PomodoroStateImpl &&
-            (identical(other.minutes, minutes) || other.minutes == minutes) &&
+            other is _$CountImpl &&
             (identical(other.seconds, seconds) || other.seconds == seconds) &&
             (identical(other.isRunning, isRunning) ||
                 other.isRunning == isRunning));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, minutes, seconds, isRunning);
+  int get hashCode => Object.hash(runtimeType, seconds, isRunning);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$PomodoroStateImplCopyWith<_$PomodoroStateImpl> get copyWith =>
-      __$$PomodoroStateImplCopyWithImpl<_$PomodoroStateImpl>(this, _$identity);
+  _$$CountImplCopyWith<_$CountImpl> get copyWith =>
+      __$$CountImplCopyWithImpl<_$CountImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int seconds, bool isRunning) count,
+    required TResult Function(bool isRunning) stop,
+  }) {
+    return count(seconds, isRunning);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int seconds, bool isRunning)? count,
+    TResult? Function(bool isRunning)? stop,
+  }) {
+    return count?.call(seconds, isRunning);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int seconds, bool isRunning)? count,
+    TResult Function(bool isRunning)? stop,
+    required TResult orElse(),
+  }) {
+    if (count != null) {
+      return count(seconds, isRunning);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Count value) count,
+    required TResult Function(_Stop value) stop,
+  }) {
+    return count(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Count value)? count,
+    TResult? Function(_Stop value)? stop,
+  }) {
+    return count?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Count value)? count,
+    TResult Function(_Stop value)? stop,
+    required TResult orElse(),
+  }) {
+    if (count != null) {
+      return count(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _PomodoroState extends PomodoroState {
-  const factory _PomodoroState(
-      {required final int minutes,
-      required final int seconds,
-      required final bool isRunning}) = _$PomodoroStateImpl;
-  const _PomodoroState._() : super._();
+abstract class _Count implements PomodoroState {
+  factory _Count({required final int seconds, final bool isRunning}) =
+      _$CountImpl;
+
+  int get seconds;
+  bool get isRunning;
+  @JsonKey(ignore: true)
+  _$$CountImplCopyWith<_$CountImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$StopImplCopyWith<$Res> {
+  factory _$$StopImplCopyWith(
+          _$StopImpl value, $Res Function(_$StopImpl) then) =
+      __$$StopImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isRunning});
+}
+
+/// @nodoc
+class __$$StopImplCopyWithImpl<$Res>
+    extends _$PomodoroStateCopyWithImpl<$Res, _$StopImpl>
+    implements _$$StopImplCopyWith<$Res> {
+  __$$StopImplCopyWithImpl(_$StopImpl _value, $Res Function(_$StopImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isRunning = null,
+  }) {
+    return _then(_$StopImpl(
+      isRunning: null == isRunning
+          ? _value.isRunning
+          : isRunning // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$StopImpl implements _Stop {
+  _$StopImpl({this.isRunning = false});
 
   @override
-  int get minutes;
+  @JsonKey()
+  final bool isRunning;
+
   @override
-  int get seconds;
+  String toString() {
+    return 'PomodoroState.stop(isRunning: $isRunning)';
+  }
+
   @override
-  bool get isRunning;
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StopImpl &&
+            (identical(other.isRunning, isRunning) ||
+                other.isRunning == isRunning));
+  }
+
   @override
+  int get hashCode => Object.hash(runtimeType, isRunning);
+
   @JsonKey(ignore: true)
-  _$$PomodoroStateImplCopyWith<_$PomodoroStateImpl> get copyWith =>
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StopImplCopyWith<_$StopImpl> get copyWith =>
+      __$$StopImplCopyWithImpl<_$StopImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int seconds, bool isRunning) count,
+    required TResult Function(bool isRunning) stop,
+  }) {
+    return stop(isRunning);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int seconds, bool isRunning)? count,
+    TResult? Function(bool isRunning)? stop,
+  }) {
+    return stop?.call(isRunning);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int seconds, bool isRunning)? count,
+    TResult Function(bool isRunning)? stop,
+    required TResult orElse(),
+  }) {
+    if (stop != null) {
+      return stop(isRunning);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Count value) count,
+    required TResult Function(_Stop value) stop,
+  }) {
+    return stop(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Count value)? count,
+    TResult? Function(_Stop value)? stop,
+  }) {
+    return stop?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Count value)? count,
+    TResult Function(_Stop value)? stop,
+    required TResult orElse(),
+  }) {
+    if (stop != null) {
+      return stop(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Stop implements PomodoroState {
+  factory _Stop({final bool isRunning}) = _$StopImpl;
+
+  bool get isRunning;
+  @JsonKey(ignore: true)
+  _$$StopImplCopyWith<_$StopImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

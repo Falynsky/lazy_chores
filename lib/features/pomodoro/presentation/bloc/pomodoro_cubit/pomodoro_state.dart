@@ -1,22 +1,17 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'pomodoro_state.freezed.dart';
-part 'pomodoro_state.g.dart';
 
 @freezed
-@JsonSerializable()
 class PomodoroState with _$PomodoroState {
-  const PomodoroState._();
+  factory PomodoroState.initial() = _Initial;
 
-  const factory PomodoroState({
-    required int minutes,
+  factory PomodoroState.count({
     required int seconds,
-    required bool isRunning,
-  }) = _PomodoroState;
+    @Default(true) bool isRunning,
+  }) = _Count;
 
-  factory PomodoroState.initial() => const PomodoroState(
-        minutes: 25,
-        seconds: 0,
-        isRunning: false,
-      );
+  factory PomodoroState.stop({
+    @Default(false) bool isRunning,
+  }) = _Stop;
 }
