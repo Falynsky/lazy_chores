@@ -4,7 +4,7 @@ import 'package:lazy_chores/features/pomodoro/presentation/bloc/pomodoro_cubit/p
 import 'package:lazy_chores/features/pomodoro/presentation/bloc/pomodoro_cubit/pomodoro_state.dart';
 
 class Pomodoro extends StatefulWidget {
-  const Pomodoro({Key? key}) : super(key: key);
+  const Pomodoro({super.key});
 
   @override
   State<Pomodoro> createState() => _PomodoroState();
