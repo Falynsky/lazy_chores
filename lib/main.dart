@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lazy_chores/features/home_screen/presentation/pages/home_screen.dart';
+import 'package:lazy_chores/presentation/navigation/main_navigation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,14 +10,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'MyApp',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('MyApp'),
-        ),
-        body: const HomeScreen(),
-      ),
-    );
+    return const MainNavigation();
   }
 }
