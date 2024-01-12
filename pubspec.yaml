@@ -18,8 +18,6 @@ dependencies:
   freezed_annotation: 2.4.1
   injecteo: 1.0.0
   json_annotation: 4.8.1
-  linteo:
-    path: /Users/kfalinski/development/opensource_repos/linteo
 
 dev_dependencies:
   architecture_linter: 0.2.0
@@ -32,6 +30,8 @@ dev_dependencies:
   freezed: 2.4.5
   injecteo_generator: 1.0.1
   json_serializable: 6.7.1
+  linteo:
+    path: /Users/kfalinski/development/opensource_repos/linteo
   mocktail: 1.0.1
 
 flutter:

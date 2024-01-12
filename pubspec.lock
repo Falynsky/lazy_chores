@@ -428,7 +428,7 @@ packages:
     source: hosted
     version: "6.7.1"
   linteo:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       path: "/Users/kfalinski/development/opensource_repos/linteo"
       relative: false
