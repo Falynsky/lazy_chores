@@ -4,17 +4,14 @@ part 'pomodoro_state.freezed.dart';
 
 @freezed
 class PomodoroState with _$PomodoroState {
-  const factory PomodoroState({
-    required int minutes,
+  factory PomodoroState.initial() = _Initial;
+
+  factory PomodoroState.count({
     required int seconds,
-    required bool isRunning,
-  }) = _PomodoroState;
+    @Default(true) bool isRunning,
+  }) = _Count;
 
-  const PomodoroState._();
-
-  factory PomodoroState.initial() => const PomodoroState(
-        minutes: 25,
-        seconds: 0,
-        isRunning: false,
-      );
+  factory PomodoroState.stop({
+    @Default(false) bool isRunning,
+  }) = _Stop;
 }

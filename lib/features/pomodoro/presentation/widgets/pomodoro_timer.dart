@@ -10,7 +10,7 @@ class PomodoroTimer extends HookWidget {
   Widget build(BuildContext context) {
      useAnimationController(duration: const Duration(seconds: 2));
     return const Text(
-      //todo: zrobić z tego osobny widget może hooked który będzie odświeżał się co sekundę i aktulizował timer
+      // TODO(Falynsky): zrobić z tego osobny widget może hooked który będzie odświeżał się co sekundę i aktulizował timer
       '25:00',
       style: TextStyle(
         fontSize: 60,
