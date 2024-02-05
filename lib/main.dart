@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:lazy_chores/core/di/di_config.dart';
 import 'package:lazy_chores/presentation/navigation/main_navigation.dart';
 
 void main() {
+  configureDependencies();
+  
   runApp(const MyApp());
 }
 

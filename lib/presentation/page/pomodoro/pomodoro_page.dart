@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:lazy_chores/features/pomodoro/presentation/pages/pomodoro.dart';
+import 'package:lazy_chores/presentation/page/pomodoro/widgets/pomodoro.dart';
 
 class PomodoroPage extends StatelessWidget {
   const PomodoroPage({super.key});

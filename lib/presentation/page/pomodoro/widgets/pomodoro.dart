@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lazy_chores/features/pomodoro/presentation/bloc/pomodoro_cubit/pomodoro_cubit.dart';
-import 'package:lazy_chores/features/pomodoro/presentation/bloc/pomodoro_cubit/pomodoro_state.dart';
+import 'package:lazy_chores/presentation/common/gen/assets.gen.dart';
+import 'package:lazy_chores/presentation/page/pomodoro/bloc/pomodoro_cubit/pomodoro_cubit.dart';
+import 'package:lazy_chores/presentation/page/pomodoro/bloc/pomodoro_cubit/pomodoro_state.dart';
 
 class Pomodoro extends StatefulWidget {
   const Pomodoro({super.key});
@@ -28,10 +29,10 @@ class _PomodoroState extends State<Pomodoro> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 100),
+       Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 100),
           child: Image(
-            image: AssetImage('assets/tomato.png'),
+            image: AssetImage(Assets.images.tomato.path),
           ),
         ),
         const SizedBox(height: 20),
