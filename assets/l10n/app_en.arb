@@ -1,0 +1,11 @@
+{
+  "@@locale": "en",
+  "home": "Home",
+  "cached": "Cached",
+  "pomodoro": "Pomodoro",
+  "pomodoro_finished": "Pomodoro finished!!",
+  "pomodoro_started": "Pomodoro started!",
+  "pomodoro_stopped": "Pomodoro stopped!",
+  "start": "Start",
+  "stop": "Stop"
+}

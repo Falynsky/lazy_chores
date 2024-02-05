@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_chores/presentation/common/gen/assets.gen.dart';
 import 'package:lazy_chores/presentation/page/pomodoro/bloc/pomodoro_cubit/pomodoro_cubit.dart';
 import 'package:lazy_chores/presentation/page/pomodoro/bloc/pomodoro_cubit/pomodoro_state.dart';
+import 'package:lazy_chores/utils/intl_util.dart';
 
 class Pomodoro extends StatefulWidget {
   const Pomodoro({super.key});
@@ -44,8 +45,8 @@ class _PomodoroState extends State<Pomodoro> {
                 if (seconds == 0) {
                   this.isRunning = isRunning;
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Pomodoro finished!'),
+                    SnackBar(
+                      content: Text(context.l10n.pomodoro_finished),
                     ),
                   );
                 } else {
@@ -81,13 +82,13 @@ class _PomodoroState extends State<Pomodoro> {
                   ? null
                   : () {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Pomodoro started!'),
+                       SnackBar(
+                          content: Text(context.l10n.pomodoro_started),
                         ),
                       );
                       pomodoroCubit.startTimer();
                     },
-              child: const Text('Start'),
+              child: Text(context.l10n.start),
             ),
             const SizedBox(width: 20),
             ElevatedButton(
@@ -95,13 +96,13 @@ class _PomodoroState extends State<Pomodoro> {
                   ? null
                   : () {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Pomodoro stopped!'),
+                        SnackBar(
+                          content: Text(context.l10n.pomodoro_stopped),
                         ),
                       );
                       pomodoroCubit.stopTimer();
                     },
-              child: const Text('Stop'),
+              child: Text(context.l10n.stop),
             ),
           ],
         ),
