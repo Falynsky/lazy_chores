@@ -2,7 +2,7 @@ name: lazy_chores
 description: A new Flutter project.
 publish_to: 'none'
 
-version: 0.0.1+1
+version: 0.0.1
 
 environment:
   flutter: 3.16.9
@@ -12,6 +12,7 @@ dependencies:
   bloc: 8.1.2
   cached_annotation: 1.6.0
   chopper: 7.1.1
+  equatable: 2.0.5
   flutter:
     sdk: flutter
   flutter_bloc: 8.1.3
@@ -21,6 +22,7 @@ dependencies:
   freezed_annotation: 2.4.1
   get_it: 7.6.7
   go_router: 13.1.0
+  hooked_bloc: 1.5.0
   injectable: 2.3.2
   intl: 0.18.1
   json_annotation: 4.8.1

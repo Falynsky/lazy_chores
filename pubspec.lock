@@ -250,7 +250,7 @@ packages:
     source: hosted
     version: "0.4.1"
   equatable:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: equatable
       sha256: c2b87cb7756efdf69892005af546c56c0b5037f54d2a88269b4f347a505e3ca2
@@ -397,6 +397,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.1"
+  hooked_bloc:
+    dependency: "direct main"
+    description:
+      name: hooked_bloc
+      sha256: "794d11a180bac06c53996aa4bc59018072de3cc5311c19f71151a473b5fe40e4"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.5.0"
   http:
     dependency: transitive
     description:

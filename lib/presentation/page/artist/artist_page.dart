@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lazy_chores/presentation/page/artist/widget/artist_view.dart';
 import 'package:lazy_chores/utils/intl_util.dart';
 
-class CachedPage extends StatelessWidget {
-  const CachedPage({super.key});
+class ArtistPage extends StatelessWidget {
+  const ArtistPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class CachedPage extends StatelessWidget {
           onPressed: () => context.go('/'),
         ),
       ),
-      body: const Text('Cached Page'),
+      body: const ArtistView(),
     );
   }
 }

@@ -32,9 +32,7 @@ class _PomodoroState extends State<Pomodoro> {
       children: [
        Padding(
           padding: const EdgeInsets.symmetric(horizontal: 100),
-          child: Image(
-            image: AssetImage(Assets.images.tomato.path),
-          ),
+          child: Assets.images.tomato.image(),
         ),
         const SizedBox(height: 20),
         BlocListener<PomodoroCubit, PomodoroState>(
