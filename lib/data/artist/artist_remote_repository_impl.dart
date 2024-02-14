@@ -8,7 +8,6 @@ part 'artist_remote_repository_impl.cached.dart';
 
 @withCache
 abstract mixin class ArtistRemoteRepositoryImpl implements ArtistRemoteRepository, _$ArtistRemoteRepositoryImpl {
-
   @factoryMethod
   factory ArtistRemoteRepositoryImpl({
     required ArtistRemoteDataSource artistRemoteDataSource,
@@ -28,28 +27,3 @@ abstract mixin class ArtistRemoteRepositoryImpl implements ArtistRemoteRepositor
     throw Exception('Failed get artist data');
   }
 }
-
-// before cached dependency
-// class ArtistRemoteRepositoryImpl implements ArtistRemoteRepository {
-//   ArtistRemoteRepositoryImpl({required this.artistRemoteDataSource});
-
-//   final ArtistRemoteDataSource artistRemoteDataSource;
-//   Artist? cachedResponse;
-
-//   @override
-//   Future<Artist> getArtist() async {
-//     if (cachedResponse != null) {
-//       return cachedResponse!;
-//     }
-
-//     final response = await artistRemoteDataSource.getArtist();
-
-//     if (response.body case final dto? when response.isSuccessful) {
-//       cachedResponse = dto.toDomain();
-//       return cachedResponse!;
-//     }
-
-//     throw Exception('Failed get artist data');
-//   }
-// }
-

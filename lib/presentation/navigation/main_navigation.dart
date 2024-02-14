@@ -15,6 +15,7 @@ class MainNavigation extends StatefulWidget {
 
 class _MainNavigationState extends State<MainNavigation> {
   final _rootKey = GlobalKey<NavigatorState>(debugLabel: 'Root');
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
@@ -36,7 +37,7 @@ class _MainNavigationState extends State<MainNavigation> {
             builder: (_, __) => const PomodoroPage(),
           ),
           GoRoute(
-            path: '/cached_test',
+            path: '/artist',
             builder: (_, __) => const ArtistPage(),
           ),
         ],

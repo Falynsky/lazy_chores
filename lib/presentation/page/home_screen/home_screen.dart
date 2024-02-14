@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
           ),
           IconButton(
             icon: const Icon(Icons.call_split_rounded),
-            onPressed: () => context.go('/cached_test'),
+            onPressed: () => context.go('/artist'),
           ),
         ],
       ),

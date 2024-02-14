@@ -9,6 +9,7 @@ class ArtistView extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    final counter = useState(0);
     final cubit = useBloc<ArtistCubit>();
     final state = useBlocBuilder(cubit);
 
@@ -22,7 +23,15 @@ class ArtistView extends HookWidget {
 
     return switch (state) {
       ArtistStateLoading() => const Center(child: CircularProgressIndicator()),
-      ArtistStateLoaded() => Text(state.artist.name)
+      ArtistStateLoaded() => Column(
+          children: [
+            Text('${state.artist.name} : ${counter.value}'),
+            IconButton(
+              icon: const Icon(Icons.refresh),
+              onPressed: () => counter.value++,
+            ),
+          ],
+        )
     };
   }
 }
