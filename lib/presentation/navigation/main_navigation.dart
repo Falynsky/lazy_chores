@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
-import 'package:lazy_chores/presentation/page/cashed_test/cached_test.dart';
+import 'package:lazy_chores/presentation/page/artist/artist_page.dart';
 import 'package:lazy_chores/presentation/page/home_screen/home_screen.dart';
 import 'package:lazy_chores/presentation/page/pomodoro/pomodoro_page.dart';
 import 'package:lazy_chores/utils/exports.dart';
@@ -15,6 +15,7 @@ class MainNavigation extends StatefulWidget {
 
 class _MainNavigationState extends State<MainNavigation> {
   final _rootKey = GlobalKey<NavigatorState>(debugLabel: 'Root');
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
@@ -36,8 +37,8 @@ class _MainNavigationState extends State<MainNavigation> {
             builder: (_, __) => const PomodoroPage(),
           ),
           GoRoute(
-            path: '/cached_test',
-            builder: (_, __) => const CachedPage(),
+            path: '/artist',
+            builder: (_, __) => const ArtistPage(),
           ),
         ],
       ),
