@@ -15,7 +15,7 @@ class ArtistView extends HookWidget {
 
     useEffect(
       () {
-        cubit.getArtist();
+        cubit.getArtists();
         return null;
       },
       [cubit],

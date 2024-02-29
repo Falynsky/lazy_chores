@@ -17,14 +17,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.2.0"
-  analyzer_plugin:
-    dependency: transitive
-    description:
-      name: analyzer_plugin
-      sha256: "9661b30b13a685efaee9f02e5d01ed9f2b423bd889d28a304d02d704aee69161"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.11.3"
   args:
     dependency: transitive
     description:
@@ -113,6 +105,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.3.0"
+  build_test:
+    dependency: transitive
+    description:
+      name: build_test
+      sha256: "260dbba934f41b0a42935e9cae1f5731b94f0c3e489dc97bcf8e281265aaa5ae"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.2"
   built_collection:
     dependency: transitive
     description:
@@ -139,10 +139,9 @@ packages:
   cached_annotation:
     dependency: "direct main"
     description:
-      name: cached_annotation
-      sha256: b8638a59a80d9413929829cd5051220d247fbd37b58abfa2bb08ed7f68111f09
-      url: "https://pub.dev"
-    source: hosted
+      path: "/Users/kfalinski/development/opensource_repos/cached/packages/cached_annotation"
+      relative: false
+    source: path
     version: "1.6.0"
   characters:
     dependency: transitive
@@ -152,14 +151,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.0"
-  charcode:
-    dependency: transitive
-    description:
-      name: charcode
-      sha256: fb98c0f6d12c920a02ee2d998da788bca066ca5f148492b7085ee23372b12306
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.3.1"
   checked_yaml:
     dependency: transitive
     description:
@@ -184,14 +175,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.1.1"
-  cli_util:
-    dependency: transitive
-    description:
-      name: cli_util
-      sha256: c05b7406fdabc7a49a3929d4af76bcaccbbffcbcdcf185b082e1ae07da323d19
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.4.1"
   clock:
     dependency: transitive
     description:
@@ -248,6 +231,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.3"
+  csslib:
+    dependency: transitive
+    description:
+      name: csslib
+      sha256: "706b5707578e0c1b4b7550f64078f0a0f19dec3f50a178ffae7006b0a9ca58fb"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   dart_style:
     dependency: transitive
     description:
@@ -272,22 +263,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.4.1"
-  drift:
-    dependency: "direct main"
-    description:
-      name: drift
-      sha256: b50a8342c6ddf05be53bda1d246404cbad101b64dc73e8d6d1ac1090d119b4e2
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.15.0"
-  drift_dev:
-    dependency: "direct dev"
-    description:
-      name: drift_dev
-      sha256: c037d9431b6f8dc633652b1469e5f53aaec6e4eb405ed29dd232fa888ef10d88
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.15.0"
   equatable:
     dependency: "direct main"
     description:
@@ -460,6 +435,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.5.0"
+  html:
+    dependency: transitive
+    description:
+      name: html
+      sha256: "3a7812d5bcd2894edf53dfaf8cd640876cf6cef50a8f238745c8b8120ea74d3a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.15.4"
   http:
     dependency: transitive
     description:
@@ -849,6 +832,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.5.0"
+  source_gen_test:
+    dependency: transitive
+    description:
+      name: source_gen_test
+      sha256: "0929da347d2dd868fed3a278b52ab4bf4467cff9a8cae40b6abbd6e96e5c4840"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.6"
   source_helper:
     dependency: transitive
     description:
@@ -881,14 +872,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.10.0"
-  sqlite3:
-    dependency: transitive
-    description:
-      name: sqlite3
-      sha256: c4a4c5a4b2a32e2d0f6837b33d7c91a67903891a5b7dbe706cf4b1f6b0c798c5
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.3.0"
   sqlite3_flutter_libs:
     dependency: "direct main"
     description:
@@ -897,14 +880,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.5.0"
-  sqlparser:
-    dependency: transitive
-    description:
-      name: sqlparser
-      sha256: dc384bb1f56d1384ce078edb5ff8247976abdab79d0c83e437210c85f06ecb61
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.34.0"
   stack_trace:
     dependency: transitive
     description:
@@ -977,6 +952,20 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.5.9"
+  theme_tailor:
+    dependency: "direct dev"
+    description:
+      path: "/Users/kfalinski/development/opensource_repos/theme_tailor/packages/theme_tailor"
+      relative: false
+    source: path
+    version: "3.0.1"
+  theme_tailor_annotation:
+    dependency: "direct main"
+    description:
+      path: "/Users/kfalinski/development/opensource_repos/theme_tailor/packages/theme_tailor_annotation"
+      relative: false
+    source: path
+    version: "3.0.1"
   time:
     dependency: transitive
     description:

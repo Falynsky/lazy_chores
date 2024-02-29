@@ -4,10 +4,9 @@ import 'package:lazy_chores/data/networking/interceptor/accept_json_content_type
 
 @module
 abstract class NetworkingModule {
-
   @injectable
   AcceptJsonContentTypeInterceptor get acceptJsonContentTypeInterceptor;
-  
+
   @lazySingleton
   ArtistApiClient get artistApiClient;
 
@@ -17,5 +16,6 @@ abstract class NetworkingModule {
   @Named(artistApiClientBaseUrl)
   String get organizationApiClientBaseUrlDev {
     return 'http://10.12.140.41:3000';
+    // return 'http://192.168.0.132:3000';
   }
 }

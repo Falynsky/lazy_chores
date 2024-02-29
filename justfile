@@ -9,6 +9,10 @@ gen:
   just get
   fvm flutter pub run build_runner build --delete-conflicting-outputs
 
+gen_verbose:
+  just get
+  fvm flutter pub run build_runner build --delete-conflicting-outputs --verbose
+
 watch:
   just get
   fvm flutter pub run build_runner watch --delete-conflicting-outputs
