@@ -6,8 +6,12 @@
     "files.watcherExclude": {
         "**/.fvm": true
     },
-    "[dart]": { "editor.rulers": [ 120 ] },
+    "[dart]": {
+        "editor.rulers": [
+            120
+        ]
+    },
     "dart.lineLength": 120,
-    "dart.flutterSdkPath": "~/fvm/versions/3.16.9",
+    "dart.flutterSdkPath": "~/fvm/versions/3.19.2",
     "editor.formatOnSave": true
 }

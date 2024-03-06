@@ -13,7 +13,7 @@ abstract mixin class ArtistRemoteRepositoryImpl implements ArtistRemoteRepositor
     required ArtistRemoteDataSource artistRemoteDataSource,
   }) = _ArtistRemoteRepositoryImpl;
 
-  @Cached(persistentStorage: true)
+  @PersistentCached(initOnCall: true)
   @override
   Future<Artist> getArtist({
     @ignoreCache bool ignoreCache = false,
@@ -25,15 +25,6 @@ abstract mixin class ArtistRemoteRepositoryImpl implements ArtistRemoteRepositor
   @LazyPersistentCached()
   @override
   Future<List<Artist>> getArtists({
-    @ignoreCache bool ignoreCache = false,
-  }) async {
-    final response = await artistRemoteDataSource.getArtists();
-    return response.body!.map((e) => e.toDomain()).toList();
-  }
-
-  @override
-  @PersistentCached(initOnCall: true)
-  Future<List<Artist>> getArtistsPersistent({
     @ignoreCache bool ignoreCache = false,
   }) async {
     final response = await artistRemoteDataSource.getArtists();
