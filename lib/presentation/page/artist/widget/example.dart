@@ -14,12 +14,6 @@ class MyButtonTheme extends ThemeExtension<MyButtonTheme> with DiagnosticableTre
   final EdgeInsets padding;
   @override
   final Color? color;
-
-  @override
-  MyButtonTheme merge(MyButtonTheme? other) {
-    // TODO: implement merge
-    return super.merge(other);
-  }
 }
 
 class MyButton extends StatelessWidget {

@@ -132,16 +132,18 @@ packages:
   cached:
     dependency: "direct dev"
     description:
-      path: "/Users/kfalinski/development/opensource_repos/cached/packages/cached"
-      relative: false
-    source: path
+      name: cached
+      sha256: "8c4626546dded66ccd833f3a3650d14b00f81cc8945c52c21c91c110e1d94d9d"
+      url: "https://pub.dev"
+    source: hosted
     version: "1.7.0"
   cached_annotation:
     dependency: "direct main"
     description:
-      path: "/Users/kfalinski/development/opensource_repos/cached/packages/cached_annotation"
-      relative: false
-    source: path
+      name: cached_annotation
+      sha256: d3ce9cf914ed64a4328bae5708367e727ad7f9188bcf954b63dbd49ef248f72f
+      url: "https://pub.dev"
+    source: hosted
     version: "1.7.0"
   characters:
     dependency: transitive
@@ -262,6 +264,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+  cupertino_icons:
+    dependency: "direct main"
+    description:
+      name: cupertino_icons
+      sha256: d57953e10f9f8327ce64a508a355f0b1ec902193f66288e8cb5070e7c47eeb2d
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.6"
   dart_style:
     dependency: transitive
     description:

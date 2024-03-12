@@ -10,11 +10,11 @@ environment:
 
 dependencies:
   bloc: 8.1.2
-  cached_annotation:
-    path: /Users/kfalinski/development/opensource_repos/cached/packages/cached_annotation
+  cached_annotation: 1.7.0
   chopper: 7.1.1
   connecteo:
     path: /Users/kfalinski/development/opensource_repos/connecteo
+  cupertino_icons: 1.0.6
   equatable: 2.0.5
   flutter:
     sdk: flutter
@@ -39,8 +39,7 @@ dependencies:
 dev_dependencies:
   bloc_test: 9.1.5
   build_runner: 2.4.8
-  cached:
-    path: /Users/kfalinski/development/opensource_repos/cached/packages/cached
+  cached: 1.7.0
   chopper_generator: 7.1.1
   flutter_gen_runner: 5.4.0
   flutter_lints: 3.0.1
@@ -53,12 +52,6 @@ dev_dependencies:
   mocktail: 1.0.3
   theme_tailor: 3.0.1
 
-dependency_overrides:
-  cached:
-    path: /Users/kfalinski/development/opensource_repos/cached/packages/cached
-  cached_annotation:
-    path: /Users/kfalinski/development/opensource_repos/cached/packages/cached_annotation
-    
 flutter_gen:
   output: lib/presentation/common/gen/
   line_length: 120

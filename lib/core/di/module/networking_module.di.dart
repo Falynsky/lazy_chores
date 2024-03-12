@@ -15,7 +15,8 @@ abstract class NetworkingModule {
   @singleton
   @Named(artistApiClientBaseUrl)
   String get organizationApiClientBaseUrlDev {
-    return 'http://10.12.140.41:3000';
+    return 'https://jsonplaceholder.typicode.com';
+    // return 'http://10.12.140.41:3000';
     // return 'http://192.168.0.132:3000';
   }
 }

@@ -17,7 +17,7 @@ abstract class ArtistRemoteDataSource extends ChopperService {
   Future<Response<ArtistDTO>> getArtist();
 
   @FactoryConverter(response: _artistsDataResponse)
-  @Get(path: 'artists/all')
+  @Get(path: 'todos')
   Future<Response<List<ArtistDTO>>> getArtists();
 }
 
@@ -27,7 +27,12 @@ Response<ArtistDTO> _artistDataResponse(Response<dynamic> response) {
 }
 
 Response<List<ArtistDTO>> _artistsDataResponse(Response<dynamic> response) {
-  final List<Map<String, dynamic>> json =
-      List<Map<String, dynamic>>.from(jsonDecode(response.body as String) as List<dynamic>);
-  return response.copyWith(body: json.map((element) => ArtistDTO.fromJson(element)).toList());
+  // final List<Map<String, dynamic>> json =
+  //     List<Map<String, dynamic>>.from(jsonDecode(response.body as String) as List<dynamic>);
+  return response.copyWith(
+    body: [
+      ArtistDTO(id: 1, name: 'test'),
+      ArtistDTO(id: 2, name: 'test2'),
+    ],
+  );
 }

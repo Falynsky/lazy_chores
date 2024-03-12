@@ -11,14 +11,9 @@ final class GetArtists {
   Future<List<Artist>> call() async {
     final baseUrl = getIt<String>(instanceName: 'artistApiClientBaseUrl');
     final connecteo = ConnectionChecker(
-      hostReachabilityChecker: MyHostReachabilityChecker(),
-      checkConnectionEntriesNative: [
-        ConnectionEntry.fromUrl(baseUrl),
-      ],
       baseUrlLookupAddress: baseUrl,
     );
     final hasInternetConnection = await connecteo.isConnected;
-
     if (!hasInternetConnection) {
       throw Exception('No internet connection');
     }
