@@ -23,16 +23,20 @@ final class GetArtists {
 }
 
 class MyHostReachabilityChecker extends HostReachabilityChecker {
+  MyHostReachabilityChecker({
+    required super.baseUrl,
+    required super.connectionEntries,
+    required super.timeout,
+    required super.checkHostReachability,
+  });
+
   @override
-  Future<bool> canReachAnyHost({
-    List<ConnectionEntry>? connectionEntries,
-    Duration? timeout,
-  }) async {
+  Future<bool> canReachAnyHost() async {
     return true;
   }
 
   @override
-  Future<bool> hostLookup({required String baseUrl}) async {
+  Future<bool> hostLookup() async {
     return true;
   }
 }
